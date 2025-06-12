@@ -1,21 +1,12 @@
 import {Link} from "react-router-dom";
+import Layout from '../components/layout';
 
 function Home(){
     return(
-        <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-300">
-            <div>
-            <Link to="/profile">
-                <button className="text-white hover:text-blue-400 p-4">Profile</button>
-            </Link>
-
-            <Link to="/dashboard">
-                <button className="text-white hover:text-blue-400 p-4">Dashboard</button>
-            </Link>
-
-            <Link to="/codeEditor">
-                <button className="text-white hover:text-blue-400 p-4">Code Editor</button>
-            </Link>
-            </div>
+        
+        <Layout>
+        <div className="min-h-screen">
+        
 
         <section className="flex flex-col items-center justify-center py-20 px-6 text-center">
             <h1 className="text-5xl font-bold mb-4 text-green-100">AlgoTracker</h1>
@@ -49,6 +40,8 @@ function Home(){
         </section>
 
         </div>
+        </Layout>
+        
     );
 }
 

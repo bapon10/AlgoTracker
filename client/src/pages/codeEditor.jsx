@@ -1,3 +1,5 @@
+import Layout from '../components/layout';
+
 import { useState } from 'react';
 import Editor from '@monaco-editor/react';
 
@@ -11,8 +13,9 @@ function CodeEditor() {
     }
 
     return (
-        <div className="p-6 bg-gray-50 min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Code Playground</h1>
+        <Layout>
+        <div className="p-6  min-h-screen">
+            <h1 className="text-2xl text-gray-50 font-bold mb-4">Code Playground</h1>
 
             <div className="flex justify-between items-center mb-2">
                 <select 
@@ -35,7 +38,7 @@ function CodeEditor() {
                 
             </div>
 
-
+            <div className="border border-gray-300">
                 <Editor 
                     height="500px"
                     defaultLanguage={language}
@@ -45,6 +48,7 @@ function CodeEditor() {
                     onChange={(value) => setCode(value)}
                     //className=""
                 ></Editor>
+            </div>
 
             {output && (
                 <div className="mt-4 p-4 bg-black text-green-400 font-mono rounded">
@@ -52,6 +56,7 @@ function CodeEditor() {
                 </div>
             )}
         </div>
+        </Layout>
     );
 }
 

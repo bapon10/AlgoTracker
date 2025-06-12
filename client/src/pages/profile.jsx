@@ -1,3 +1,5 @@
+import Layout from "../components/layout";
+
 function Profile() {
     
     const user = {
@@ -10,8 +12,9 @@ function Profile() {
     };
 
     return (
-        <div className="p-6 bg-gray-50 min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Your Profile</h1>
+        <Layout>
+        <div className="p-6 min-h-screen">
+            <h1 className="text-2xl font-bold mb-4 text-gray-50">Your Profile</h1>
 
             <div className="bg-white p-6 rounded-lg shadow-md max-w-md"> 
                 <p className="mb-2"> 
@@ -31,6 +34,7 @@ function Profile() {
                 </p>
             </div>
         </div>
+        </Layout>
     );
 }
 
