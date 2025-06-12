@@ -1,10 +1,26 @@
+import {Link} from "react-router-dom";
+
 function Home(){
     return(
-        <div className="min-h-screen bg-gradient-to-br from-slate-800 to-slate-100">
+        <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-300">
+            <div>
+            <Link to="/profile">
+                <button className="text-white hover:text-blue-400 p-4">Profile</button>
+            </Link>
+
+            <Link to="/dashboard">
+                <button className="text-white hover:text-blue-400 p-4">Dashboard</button>
+            </Link>
+
+            <Link to="/codeEditor">
+                <button className="text-white hover:text-blue-400 p-4">Code Editor</button>
+            </Link>
+            </div>
+
         <section className="flex flex-col items-center justify-center py-20 px-6 text-center">
-            <h1 className="text-5xl font-bold mb-4">AlgoTracker</h1>
-            <p className="text-lg max-w-xl mb-6 text-grey-300">Track your DSA progress across LeetCode, Codeforces and more</p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl text-lg transition">Get Started</button>
+            <h1 className="text-5xl font-bold mb-4 text-green-100">AlgoTracker</h1>
+            <p className="text-lg max-w-xl mb-6 text-slate-200">Track your DSA progress across LeetCode, Codeforces and more</p>
+            <button className="bg-blue-500 active:bg-blue-600 text-white px-6 py-3 rounded-xl text-lg duration-50">Get Started</button>
 
 
         </section>
