@@ -27,6 +27,7 @@ function Navbar() {
                             <li><Link to ="/dashboard" className="hover:text-blue-500">Dashboard</Link></li>
                             <li><Link to ="/codeEditor" className="hover:text-blue-500">Code Editor</Link></li>
                             <li><Link to ="/Profile" className="hover:text-blue-500">Profile</Link></li>
+                            <li><Link to ="/vault" className="hover:text-blue-500">Pattern Vault</Link></li>
                         </div>
                     </ul>
 
@@ -44,6 +45,7 @@ function Navbar() {
                         <li><Link to ="/dashboard" onClick={toggleMenu} className="hover:text-blue-500">Dashboard</Link></li>
                         <li><Link to ="/codeEditor" onClick={toggleMenu} className="hover:text-blue-500">Code Editor</Link></li>
                         <li><Link to ="/Profile" onClick={toggleMenu} className="hover:text-blue-500">Profile</Link></li>
+                        <li><Link to ="/vault" className="hover:text-blue-500">Pattern Vault</Link></li>
                     </div>
                 </ul>
                 )}

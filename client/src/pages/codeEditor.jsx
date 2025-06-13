@@ -1,4 +1,5 @@
 import Layout from '../components/layout';
+import Button from '../components/button';
 
 import { useState } from 'react';
 import Editor from '@monaco-editor/react';
@@ -7,11 +8,22 @@ function CodeEditor() {
     const [code, setCode] = useState('//Start coding here');
     const [language, setLanguage]= useState('javascript');
     const [output, setOutput] = useState('');
+    const [isRunning, setIsRunning] = useState(false);
 
     const handleRun = () => {
-        setOutput(`Running ${language} code...\n\n${code}`)
-    }
 
+    setIsRunning(true) 
+
+    setTimeout(() => {
+        setOutput(`Running ${language} code...\n\n${code}`);
+        setIsRunning(false)},
+        2000
+    )}
+
+    const saveToDb = () => {
+        alert("save code to database - Coming Soon!")
+    }
+    
     return (
         <Layout>
         <div className="p-6  min-h-screen">
@@ -28,17 +40,18 @@ function CodeEditor() {
                     <option value="python">Python</option>
                     <option value="cpp">C++</option>
                 </select>
-            
+            <div className="flex space-x-2">
+                <Button onClick={saveToDb}>
+                Save Code
+                </Button>
 
-                <button onClick={handleRun}
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                >
-                    Run
-                </button>
-                
+                <Button onClick={handleRun} variant="primary" isLoading={isRunning}>
+                Run
+                </Button>
+            </div>
             </div>
 
-            <div className="border border-gray-300">
+            <div className="border rounded-lg overflow-hidden shadow">
                 <Editor 
                     height="500px"
                     defaultLanguage={language}
@@ -46,8 +59,7 @@ function CodeEditor() {
                     theme="vs-dark"
                     value={code}
                     onChange={(value) => setCode(value)}
-                    //className=""
-                ></Editor>
+                />
             </div>
 
             {output && (

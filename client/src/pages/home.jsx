@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
 import Layout from '../components/layout';
+import Button from "../components/button";
 
 function Home(){
     return(
@@ -11,9 +11,7 @@ function Home(){
         <section className="flex flex-col items-center justify-center py-20 px-6 text-center">
             <h1 className="text-5xl font-bold mb-4 text-green-100">AlgoTracker</h1>
             <p className="text-lg max-w-xl mb-6 text-slate-200">Track your DSA progress across LeetCode, Codeforces and more</p>
-            <button className="bg-blue-500 active:bg-blue-600 text-white px-6 py-3 rounded-xl text-lg duration-50">Get Started</button>
-
-
+            <Button>Get Started</Button>
         </section>
 
         <section className="py-16 px-6 bg-slate-900">
